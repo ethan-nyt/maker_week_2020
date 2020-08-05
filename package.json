@@ -3,8 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "axios": "^0.19.2",
+    "plotly.js": "^1.54.7",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-plotly.js": "^2.4.0",
     "react-scripts": "0.9.x"
   },
   "devDependencies": {},
