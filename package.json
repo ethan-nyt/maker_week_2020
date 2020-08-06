@@ -9,7 +9,10 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-plotly.js": "^2.4.0",
-    "react-scripts": "0.9.x"
+    "react-scripts": "0.9.x",
+    "semantic-ui-css": "^2.4.1",
+    "semantic-ui-react": "^1.1.1",
+    "yarn": "^1.22.4"
   },
   "devDependencies": {
     "prettier": "2.0.5"

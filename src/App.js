@@ -1,5 +1,7 @@
 import React, { useRef, useEffect, useState } from "react";
 import Chart from "chart.js";
+import { Button } from "semantic-ui-react";
+
 import axios from "axios";
 
 export default () => {
@@ -69,6 +71,7 @@ export default () => {
 
   return (
     <div id="app">
+      <Button />
       <canvas ref={canvasRef} id="canvas"></canvas>
     </div>
   );
