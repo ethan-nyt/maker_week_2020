@@ -8,7 +8,7 @@ export default class App extends React.Component {
   }
   componentDidMount() {
     this.myChart = new Chart(this.canvasRef.current, {
-      type: 'bar',
+      type: 'pie',
       data: {
         labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
         datasets: [{
@@ -30,10 +30,13 @@ export default class App extends React.Component {
             'rgba(153, 102, 255, 1)',
             'rgba(255, 159, 64, 1)'
           ],
-          borderWidth: 1
+          borderWidth: 1,
+          id: [1, 2, 3, 4, 5, 6],
         }]
       },
       options: {
+        onClick: this.onChartClick,
+        // events: ['click'],
         scales: {
           yAxes: [{
             ticks: {
@@ -44,9 +47,16 @@ export default class App extends React.Component {
       }
     });
   }
+  onChartClick = (event, item) => {
+    this.myChart.update()
+    item[0]._model.outerRadius += 10
+    console.log(item[0]._model)
+  }
   render() {
     return (
-      <canvas ref={this.canvasRef} width="400" height="400"></canvas>
+      <div id="app">
+        <canvas ref={this.canvasRef} id="canvas"></canvas>
+      </div>
     );
   }
 }
