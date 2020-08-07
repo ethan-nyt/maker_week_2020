@@ -1,19 +1,38 @@
 import React, { useState } from 'react'
-import { Form } from 'semantic-ui-react'
+import { Header } from 'semantic-ui-react'
 
-export default = () => {
-    const HosptialVisits = ["0", "1-2", "3-4", "5-6", "7-8", "9-10","more than 10" ]
-    return (
-    <Form>
-        <Form.Group>
-            <label>Number of HosptialVisits </label>
-            <Form.Field 
-            label="0"
-            control="input"
-            type="radio"
-            name="HospitalVisitOption"
-            />
-        </Form.Group>
-    </Form>
-    )
+export default () => {
+  const [numVisits, setNumVisits] = useState(0)
+
+  return (
+    <div>
+      <Header as='h1' textAlign='center' style={{ marginTop: 200 }}>
+        Number of Hospital Visits
+      </Header>
+      <Header as='h2' textAlign='center'>
+        {numVisits}
+      </Header>
+      <div style={{ display: 'flex', justifyContent: 'center' }}>
+        <input
+          type='range'
+          list='tickmarks'
+          value={numVisits}
+          onChange={(event) => {
+            setNumVisits(event.target.value)
+          }}
+          min='0'
+          max='20'
+          style={{ width: 500 }}
+        />
+      </div>
+
+      <datalist id='tickmarks'>
+        <option value='0'></option>
+        <option value='5'></option>
+        <option value='10'></option>
+        <option value='15'></option>
+        <option value='20'></option>
+      </datalist>
+    </div>
+  )
 }
