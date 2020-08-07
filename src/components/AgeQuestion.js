@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Header, HeaderContent } from 'semantic-ui-react'
+import { Header, Button, Icon } from 'semantic-ui-react'
 
 export default () => {
   const [Age, setAge] = useState(15)
@@ -33,6 +33,27 @@ export default () => {
           <option value='44'></option>
           <option value='54'></option>
         </datalist>
+      </div>
+
+      <div style={{ display: 'flex', justifyContent: 'center' }}>
+        <Button
+          color='teal'
+          style={{ marginTop: 50, width: 108 }}
+          icon
+          labelPosition='left'
+        >
+          <Icon name='left arrow' />
+          Prev
+        </Button>
+        <Button
+          color='teal'
+          style={{ marginTop: 50 }}
+          icon
+          labelPosition='right'
+        >
+          Next
+          <Icon name='right arrow'></Icon>
+        </Button>
       </div>
     </div>
   )

@@ -7,7 +7,7 @@ import AgeQuestion from './components/AgeQuestion'
 export default () => {
   return (
     <div id='app'>
-      <AgeQuestion />
+      <HospitalVisits />
     </div>
   )
 }
