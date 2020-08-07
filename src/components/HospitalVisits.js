@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Header, Button, Icon } from "semantic-ui-react";
 
-
 export default ({ decrementPage, formData, setFormData, setUserDetails }) => {
   return (
     <div>

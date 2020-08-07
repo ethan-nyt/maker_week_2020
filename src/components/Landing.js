@@ -11,8 +11,8 @@ export default () => {
   return (
     <Container textAlign="center">
       <Header
-        content="Huge Title"
-        as="h1"
+        content="Predicting Maternal Morbidity"
+        as="h2"
         textAlign="center"
         style={{
           fontSize: "8em",
@@ -20,8 +20,17 @@ export default () => {
         }}
       />
       <Header
-        content="The purpose here. Very simple but powerful."
-        as="h2"
+        content="The US is currently experiencing the largest increase in maternal morbidity in the developed world since the 1990’s."
+        as="h4"
+        textAlign="center"
+        style={{
+          fontSize: "2em",
+          fontWeight: "normal",
+        }}
+      />
+      <Header
+        content=" According to the CDC (Center for Disease Control and Prevention), roughly 60% of these deaths are preventable."
+        as="h4"
         textAlign="center"
         style={{
           fontSize: "2em",

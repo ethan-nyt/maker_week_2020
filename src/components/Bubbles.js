@@ -67,12 +67,21 @@ const mockData = [
   },
 ];
 // TODO: follow same order as floats from api
+/*
+    Intensive Care: 0.3333333333333333
+  Maternal Transfusion: 0.3333333333333333
+  Pernieal Laceration: 0.3333333333333333
+  Ruptured Uterus: 0.3333333333333333
+  Unplanned Hysterectomy: 0.3333333333333333
+  no_complication: 4.213991769547325
+ */
 var conditions = [
-  "Ruptured Uterus",
-  "Perineal Laceration",
-  "Transfusion",
   "Intensive Care",
-  "Unplanned Historectemy",
+  "Maternal Transfusion",
+  "Perineal Laceration",
+  "Ruptured Uterus",
+  "Unplanned Hystorectemy",
+  "No Complications",
 ];
 
 var tooltipProps = [
