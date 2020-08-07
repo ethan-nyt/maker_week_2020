@@ -5,6 +5,14 @@ import axios from "axios";
 import BubbleChart from "./Bubbles";
 
 const mockResponse = {
+  /*
+      Intensive Care: 0.3333333333333333
+    Maternal Transfusion: 0.3333333333333333
+    Pernieal Laceration: 0.3333333333333333
+    Ruptured Uterus: 0.3333333333333333
+    Unplanned Hysterectomy: 0.3333333333333333
+    no_complication: 4.213991769547325
+   */
   data: [0.05, 0.15, 0.25, 0.5, 0.05],
 };
 
@@ -22,11 +30,15 @@ export default ({ userDetails }) => {
   useEffect(() => {
     const payload = { input: [race, numVisitsMapping[hospitalVisits], ageMapping[age]] };
     // TODO replace wait with the actual axios.post when the server is ready
-    axios.post('/api/predict', payload).then(console.log).catch(console.error)
-    wait(1500).then(({ data }) => {
-      //
-      setResponse(data);
-    });
+    axios.post('/api/predict', payload).then(({data}) => {
+      console.log('response:', JSON.parse(data.response));
+      const conditions = JSON.parse(data.response);
+      setResponse(Object.values(conditions));
+    }).catch(console.error)
+    // wait(1500).then(({ data }) => {
+    //   //
+    //   setResponse(data);
+    // });
   }, []);
   return (
     <div>
