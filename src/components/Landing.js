@@ -30,7 +30,16 @@ export default () => {
       />
       <Header
         content=" According to the CDC (Center for Disease Control and Prevention), roughly 60% of these deaths are preventable."
-        as="h4"
+        as="h5"
+        textAlign="center"
+        style={{
+          fontSize: "2em",
+          fontWeight: "normal",
+        }}
+      />
+      <Header
+        content="There exist wide racial and ethnic gaps in the maternal morbidity data. The CDC reports that the death rate during childbirth is much higher for people of color."
+        as="h5"
         textAlign="center"
         style={{
           fontSize: "2em",
