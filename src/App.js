@@ -1,12 +1,20 @@
 import React from "react";
-import { Button } from "semantic-ui-react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import FormViewsRouter from "./components/FormViewsRouter";
 import Landing from "./components/Landing";
-import RaceQuestion from "./components/RaceQuestion";
 
 export default () => {
   return (
-    <div id="app">
-      <RaceQuestion />
-    </div>
+    <Router>
+      <Switch>
+        <Route exact path="/">
+          <Landing />
+        </Route>
+        <Route path="/form">
+          <FormViewsRouter />
+        </Route>
+        <Route path="/results"></Route>
+      </Switch>
+    </Router>
   );
 };
