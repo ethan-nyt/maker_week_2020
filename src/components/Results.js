@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Button, Icon, Loader } from "semantic-ui-react";
 import axios from 'axios';
+import BubbleChart from './Bubbles'
 
 
 const mockResponse = {
@@ -26,7 +27,7 @@ export default ({ userDetails }) => {
   return (
     <div>
       {
-        response ? JSON.stringify(response) : <Loader size="massive" active={true} />
+        response ? <BubbleChart /> : <Loader size="massive" active={true} />
       }
       <p>
         Age: {age}, Race: {race}, Prenatal visits: {hospitalVisits}
