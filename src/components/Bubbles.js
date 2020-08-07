@@ -75,10 +75,50 @@ var conditions = [
   "Unplanned Historectemy",
 ];
 
+var tooltipProps = [
+  "mattDamon",
+  "Pizza",
+  "Banana",
+  "Hello",
+  "Yerrr",
+  // {
+  //   css: "value",
+  //   prop: "value",
+  // },
+  // {
+  //   css: "change",
+  //   prop: "colorValue",
+  //   display: "Change",
+  // },
+];
+
 export default class BubbleChart extends React.Component {
   constructor(props) {
     super(props);
   }
+  state = {
+    condition: "",
+    probability: "",
+  };
+  experimentTooltip = (domNode, modelDat) => {
+    // replace domNode children?
+    console.log(modelDat);
+
+    domNode.innerHTML = JSON.stringify(
+      <div>
+        <p>Condition: {modelDat.displayText}</p>
+        <p>Percentage chance: {modelDat.value}</p>
+      </div>
+    );
+  };
+
+  updateReadMore = (dataModel) => {
+    this.setState({
+      condition: dataModel.displayText,
+      probability: dataModel.value,
+    });
+  };
+
   render() {
     var newData = this.props.results.map((float) => ({
       value: float,
@@ -103,14 +143,18 @@ export default class BubbleChart extends React.Component {
           selectedColor="#737373"
           selectedTextColor="#d9d9d9"
           fixedDomain={{ min: -1, max: 1 }}
-          onClick={(e) => console.log("click", e)}
+          onClick={this.updateReadMore}
           legend={true}
           legendSpacing={0}
           // fontSizeFactor={1.25}
-          tooltip={true}
-          tooltipProps={tooltipProps}
-          // tooltipFunc={tooltipFunc}
+          tooltip={false}
+          // tooltipProps={tooltipProps}
+          // tooltipFunc={this.experimentTooltip}
         />
+        <div>
+          <p>Condition: {this.state.condition}</p>
+          <p>Probability: {this.state.probability}</p>
+        </div>
       </div>
     );
   }
