@@ -7,6 +7,10 @@
   width: 100%;
 }
 
+.bubble {
+  fill: pink;
+}
+
 .data-visualization {
   height: 500px;
 }
