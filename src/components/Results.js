@@ -8,6 +8,10 @@ const mockResponse = {
   data: [0.05, 0.15, 0.25, 0.5, 0.05],
 };
 
+const numVisitsMapping = [0, 0, 0, 6, 6, 7, 7, 8, 8, 9, 9, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5];
+
+const ageMapping = [8, 8, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 7, 7, 7, 7, 7]
+
 const wait = (ms) =>
   new Promise((resolve) => setTimeout(() => resolve(mockResponse), ms));
 
@@ -16,9 +20,9 @@ export default ({ userDetails }) => {
   const [response, setResponse] = useState(null);
   // if details are true, send to API!
   useEffect(() => {
-    const payload = { input: [race, hospitalVisits, age] };
+    const payload = { input: [race, numVisitsMapping[hospitalVisits], ageMapping[age]] };
     // TODO replace wait with the actual axios.post when the server is ready
-    // axios.post('/api/predict', payload).then(console.log).catch(console.error)
+    axios.post('/api/predict', payload).then(console.log).catch(console.error)
     wait(1500).then(({ data }) => {
       //
       setResponse(data);

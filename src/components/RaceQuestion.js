@@ -3,21 +3,21 @@ import { Header, Form, Button, Icon } from "semantic-ui-react";
 
 export default ({ incrementPage, decrementPage, formData, setFormData }) => {
   const races = [
-    "White (only)",
-    "Black (only)",
     "AIAN (only)",
     "Asian Indian (only)",
+    "Black (only)",
     "Chinese (only)",
     "Filipino (only)",
+    "Guamanian (only)",
+    "Hawaiian (only)",
     "Japanese (only)",
     "Korean (only)",
-    "Vietnamese (only)",
-    "Other Asian (only)",
-    "Hawaiian (only)",
-    "Guamanian (only)",
-    "Samoan (only)",
-    "Other Pacific Islander (only)",
     "More than one race",
+    "Other Asian (only)",
+    "Other Pacific Islander (only)",
+    "Samoan (only)",
+    "Vietnamese (only)",
+    "White (only)",
   ];
 
   /**
