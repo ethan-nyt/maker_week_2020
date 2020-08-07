@@ -1,60 +1,50 @@
-import React, { useState } from 'react'
-import { Header, Button, Icon } from 'semantic-ui-react'
+import React from "react";
+import { Header, Button, Icon } from "semantic-ui-react";
 
-export default () => {
-  const [Age, setAge] = useState(15)
-
+export default ({ incrementPage, decrementPage, formData, setFormData }) => {
   return (
     <div>
-      <Header as='h1' textAlign='center' style={{ marginTop: 200 }}>
+      <Header as="h1" textAlign="center" style={{ marginTop: 200 }}>
         What's your age?
       </Header>
-      <Header as='h2' textAlign='center'>
-        {Age}
+      <Header as="h2" textAlign="center">
+        {formData.age}
       </Header>
 
-      <div style={{ display: 'flex', justifyContent: 'center' }}>
+      <div style={{ display: "flex", justifyContent: "center" }}>
         <input
-          type='range'
-          list='tickmarks'
-          value={Age}
+          type="range"
+          list="tickmarks"
+          value={formData.age}
           onChange={(event) => {
-            setAge(event.target.value)
+            setFormData({ ...formData, age: Number(event.target.value) });
           }}
-          min='13'
-          max='54'
+          min="13"
+          max="54"
           style={{ width: 500 }}
         />
 
-        <datalist id='tickmarks'>
-          <option value='0'></option>
-          <option value='24'></option>
-          <option value='34'></option>
-          <option value='44'></option>
-          <option value='54'></option>
+        <datalist id="tickmarks">
+          <option value="0"></option>
+          <option value="24"></option>
+          <option value="34"></option>
+          <option value="44"></option>
+          <option value="54"></option>
         </datalist>
       </div>
 
-      <div style={{ display: 'flex', justifyContent: 'center' }}>
+      <div style={{ display: "flex", justifyContent: "center" }}>
         <Button
-          color='teal'
-          style={{ marginTop: 50, width: 108 }}
-          icon
-          labelPosition='left'
-        >
-          <Icon name='left arrow' />
-          Prev
-        </Button>
-        <Button
-          color='teal'
+          onClick={incrementPage}
+          color="teal"
           style={{ marginTop: 50 }}
           icon
-          labelPosition='right'
+          labelPosition="right"
         >
           Next
-          <Icon name='right arrow'></Icon>
+          <Icon name="right arrow"></Icon>
         </Button>
       </div>
     </div>
-  )
-}
+  );
+};
