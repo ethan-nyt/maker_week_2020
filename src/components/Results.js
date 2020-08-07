@@ -16,6 +16,7 @@ export default ({ userDetails }) => {
   // if details are true, send to API!
   useEffect(() => {
     const payload = { input: [race, hospitalVisits, age] }
+    // TODO replace wait with the actual axios.post when the server is ready
     // axios.post('/api/predict', payload).then(console.log).catch(console.error)
     wait(3000).then(({ data }) => {
       //
